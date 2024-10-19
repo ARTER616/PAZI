@@ -1,0 +1,38 @@
+\doxysection{keygeneration.\+c File Reference}
+\hypertarget{keygeneration_8c}{}\label{keygeneration_8c}\index{keygeneration.c@{keygeneration.c}}
+{\ttfamily \#include $<$openssl/evp.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}keygeneration.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{keygeneration_8c_a6c91bc32238b9674b884d56d168a0269}{derive\+\_\+key\+\_\+iv}} (const char \texorpdfstring{$\ast$}{*}password\+\_\+for\+\_\+key, unsigned char \texorpdfstring{$\ast$}{*}full\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Генерирует ключ и вектор инициализации на основе пароля с использованием PBKDF2-\/\+HMAC-\/\+SHA-\/256. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{keygeneration_8c_a6c91bc32238b9674b884d56d168a0269}\index{keygeneration.c@{keygeneration.c}!derive\_key\_iv@{derive\_key\_iv}}
+\index{derive\_key\_iv@{derive\_key\_iv}!keygeneration.c@{keygeneration.c}}
+\doxysubsubsection{\texorpdfstring{derive\_key\_iv()}{derive\_key\_iv()}}
+{\footnotesize\ttfamily \label{keygeneration_8c_a6c91bc32238b9674b884d56d168a0269} 
+int derive\+\_\+key\+\_\+iv (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{password\+\_\+for\+\_\+key}{, }\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{full\+\_\+key}{}\end{DoxyParamCaption})}
+
+
+
+Генерирует ключ и вектор инициализации на основе пароля с использованием PBKDF2-\/\+HMAC-\/\+SHA-\/256. 
+
+Эта функция использует алгоритм PBKDF2 (Password-\/\+Based Key Derivation Function 2) с HMAC-\/\+SHA-\/256 для генерации криптографически стойких ключа и вектора инициализации на основе введенного пользователем пароля. PBKDF2 добавляет соль и многократные итерации, чтобы сделать атаку на ключ значительно сложнее.
+
+
+\begin{DoxyParams}{Parameters}
+{\em password\+\_\+for\+\_\+key} & Пароль, введенный пользователем, для генерации ключа. \\
+\hline
+{\em full\+\_\+key} & Буфер для записи сгенерированного ключа длиной 32 байта (256 бит) и вектора инициализации длиной 16 байт (128 бит). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает 1 при успешной генерации ключа и init\+Vector, иначе возвращает 0 в случае ошибки.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Длина ключа фиксирована на 256 бит (32 байта), а init\+Vector — на 128 бит (16 байт). Использование соли в алгоритме PBKDF2 увеличивает сложность подбора пароля. 
+\end{DoxyNote}

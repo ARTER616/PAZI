@@ -1,0 +1,60 @@
+\doxysection{encrdecr.\+h File Reference}
+\hypertarget{encrdecr_8h}{}\label{encrdecr_8h}\index{encrdecr.h@{encrdecr.h}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{encrdecr_8h_a79c8cd9d8b82c3cda3ee032f20d8f88f}{encryption}} (const char \texorpdfstring{$\ast$}{*}file1\+\_\+name, const char \texorpdfstring{$\ast$}{*}file2\+\_\+name, unsigned char \texorpdfstring{$\ast$}{*}key, unsigned char \texorpdfstring{$\ast$}{*}init\+Vector)
+\begin{DoxyCompactList}\small\item\em Шифрует файл с использованием алгоритма AES-\/256-\/\+CBC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{encrdecr_8h_a98e4cb6c2942d9653980afac791c4c77}{decryption}} (const char \texorpdfstring{$\ast$}{*}file1\+\_\+name, const char \texorpdfstring{$\ast$}{*}file2\+\_\+name, unsigned char \texorpdfstring{$\ast$}{*}key, unsigned char \texorpdfstring{$\ast$}{*}init\+Vector)
+\begin{DoxyCompactList}\small\item\em Дешифрует файл, зашифрованный алгоритмом AES-\/256-\/\+CBC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{encrdecr_8h_a98e4cb6c2942d9653980afac791c4c77}\index{encrdecr.h@{encrdecr.h}!decryption@{decryption}}
+\index{decryption@{decryption}!encrdecr.h@{encrdecr.h}}
+\doxysubsubsection{\texorpdfstring{decryption()}{decryption()}}
+{\footnotesize\ttfamily \label{encrdecr_8h_a98e4cb6c2942d9653980afac791c4c77} 
+int decryption (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file1\+\_\+name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{file2\+\_\+name}{, }\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{init\+Vector}{}\end{DoxyParamCaption})}
+
+
+
+Дешифрует файл, зашифрованный алгоритмом AES-\/256-\/\+CBC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file1\+\_\+name} & Имя входного файла. \\
+\hline
+{\em file2\+\_\+name} & Имя выходного файла. \\
+\hline
+{\em key} & Ключ шифрования. \\
+\hline
+{\em init\+Vector} & Вектор инициализации. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает 1 при успехе, 0 при ошибке. 
+\end{DoxyReturn}
+\Hypertarget{encrdecr_8h_a79c8cd9d8b82c3cda3ee032f20d8f88f}\index{encrdecr.h@{encrdecr.h}!encryption@{encryption}}
+\index{encryption@{encryption}!encrdecr.h@{encrdecr.h}}
+\doxysubsubsection{\texorpdfstring{encryption()}{encryption()}}
+{\footnotesize\ttfamily \label{encrdecr_8h_a79c8cd9d8b82c3cda3ee032f20d8f88f} 
+int encryption (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file1\+\_\+name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{file2\+\_\+name}{, }\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{init\+Vector}{}\end{DoxyParamCaption})}
+
+
+
+Шифрует файл с использованием алгоритма AES-\/256-\/\+CBC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file1\+\_\+name} & Имя входного файла. \\
+\hline
+{\em file2\+\_\+name} & Имя выходного файла. \\
+\hline
+{\em key} & Ключ шифрования. \\
+\hline
+{\em init\+Vector} & Вектор инициализации. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает 1 при успехе, 0 при ошибке. 
+\end{DoxyReturn}
